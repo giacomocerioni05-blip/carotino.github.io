@@ -1,0 +1,51 @@
+/* intro.css – sezione #intro */
+/* ---------- 1. intro ---------- */
+#intro { position: relative; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; }
+.intro-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+.intro-griglia { position: absolute; inset: 0; pointer-events: none; visibility: hidden; }
+.segna-colonna-1 { grid-column: 1; }
+.intro-caricamento {
+  position: absolute; left: 0; right: 0; top: 50%; text-align: center;
+  color: var(--testo-scuro-2); font-size: 14px; transition: opacity .5s;
+}
+.intro-caricamento.nascosto { opacity: 0; pointer-events: none; }
+
+.intro-titoli {
+  position: absolute; left: 0; right: 0; bottom: clamp(70px, 13vh, 140px);
+  text-align: center; pointer-events: none;
+}
+.intro-nome {
+  grid-column: 1 / 13;
+  font-family: var(--font);
+  font-size: clamp(44px, 7.5vw, 96px); line-height: 1.04; font-weight: 600; letter-spacing: -0.015em;
+  background: linear-gradient(180deg, #fff 30%, #a1a1a6);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.intro-autore {
+  grid-column: 1 / 13; margin-top: 10px;
+  font-family: var(--font); font-size: clamp(17px, 1.7vw, 21px); font-weight: 500; letter-spacing: 0.011em;
+  color: var(--testo-scuro-2);
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .6s ease .25s, transform .6s cubic-bezier(.2,.7,.2,1) .25s;
+}
+.intro-finita .intro-nome, .intro-finita .intro-autore { opacity: 1; transform: none; }
+
+.intro-salta {
+  position: absolute; right: var(--margine); bottom: 28px;
+  background: rgba(255,255,255,.1); color: #f5f5f7; border: 0; border-radius: 980px;
+  padding: 6px 14px; font-size: 12px; cursor: pointer; transition: opacity .6s, background-color .2s;
+}
+.intro-salta:hover { background: rgba(255,255,255,.18); }
+.intro-finita .intro-salta { opacity: 0; pointer-events: none; }
+.intro-scorri {
+  position: absolute; left: 50%; bottom: 26px; width: 26px; height: 40px; margin-left: -13px;
+  border: 1.5px solid rgba(255,255,255,.45); border-radius: 14px; opacity: 0; transition: opacity .6s ease .6s;
+}
+.intro-scorri span {
+  position: absolute; left: 50%; top: 8px; width: 3px; height: 8px; margin-left: -1.5px;
+  background: #f5f5f7; border-radius: 2px; animation: scorri 1.8s ease-in-out infinite;
+}
+.intro-finita .intro-scorri { opacity: 1; }
+@keyframes scorri { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }

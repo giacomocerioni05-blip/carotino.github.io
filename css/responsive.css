@@ -1,0 +1,22 @@
+/* responsive.css – adattamenti per schermi medi e stretti (breakpoint come apple.com) */
+/* ---------- schermi stretti (come apple.com: sotto 734px) ---------- */
+@media (max-width: 1068px) {
+  .col-span-4 { grid-column: span 12; }
+  .col-2-8, .col-2-9, .col-9-12, .col-8-12, .col-2-12 { grid-column: 1 / 13; }
+  .scheda { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+}
+@media (max-width: 734px) {
+  :root { --spazio-col: 12px; }
+  .nav-voci li:not(:last-child) { display: none; }
+  .nav-titolo { grid-column: 1 / 9; font-size: 19px; }
+  .nav-voci { grid-column: 9 / 13; }
+  /* le viste: due per riga, a tutta larghezza */
+  .viste-griglia figure { grid-column: span 3; }   /* due per riga */
+  .viste-griglia figure { border-radius: 16px; }
+  .viste-griglia figcaption { left: 12px; bottom: 10px; font-size: 12px; }
+  .indossa-palco { aspect-ratio: 3 / 4; border-radius: 20px; }
+  .etichetta-testo { padding: 6px 9px; max-width: 128px; white-space: normal; }
+  .etichetta-testo strong { font-size: 13px; }
+  .etichetta-testo small { font-size: 11px; }
+  .piede-destra { text-align: left; }
+}

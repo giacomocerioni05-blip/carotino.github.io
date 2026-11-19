@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Occhiali Protettivi – Giacomo Cerioni</title>
+  <meta name="description" content="Occhiali Protettivi di Giacomo Cerioni: il modello 3D, le viste, la chiusura, l'esploso e la prova con la fotocamera.">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sezioni/intro.css">
+  <link rel="stylesheet" href="css/sezioni/panoramica.css">
+  <link rel="stylesheet" href="css/sezioni/viste.css">
+  <link rel="stylesheet" href="css/sezioni/scorrimento.css">
+  <link rel="stylesheet" href="css/sezioni/indossali.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Three.js: l'importmap dice al browser dove trovare "three" e i suoi addons -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- le 12 colonne in trasparenza (tasto G) -->
+  <div class="griglia-guida" aria-hidden="true">
+    <div class="griglia"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- navigazione del prodotto, come le pagine Apple -->
+  <nav class="nav-locale" aria-label="Sezioni">
+    <div class="griglia nav-griglia">
+      <a class="nav-titolo" href="#intro">Occhiali Protettivi</a>
+      <ul class="nav-voci">
+        <li><a href="#panoramica">Panoramica</a></li>
+        <li><a href="#viste">Viste</a></li>
+        <li><a href="#chiusura">Chiusura</a></li>
+        <li><a href="#esploso">Esploso</a></li>
+        <li><a class="nav-bottone" href="#indossali">Indossali</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. INTRO: il "video" su fondo nero -->
+    <section id="intro" class="sezione-scura">
+      <canvas class="intro-canvas" aria-label="Animazione 3D degli Occhiali Protettivi"></canvas>
+      <!-- serve a intro.js per sapere dov'è la colonna 1 -->
+      <div class="griglia intro-griglia" aria-hidden="true"><span class="segna-colonna-1"></span></div>
+      <p class="intro-caricamento">Caricamento del modello 3D…</p>
+      <div class="griglia intro-titoli">
+        <h1 class="intro-nome">Occhiali Protettivi</h1>
+        <p class="intro-autore">Giacomo Cerioni</p>
+      </div>
+      <button class="intro-salta" type="button">Salta animazione</button>
+      <a class="intro-scorri" href="#panoramica" aria-label="Scorri alla descrizione"><span></span></a>
+    </section>
+
+    <!-- 2. DESCRIZIONE -->
+    <section id="panoramica" class="sezione-chiara">
+      <div class="griglia">
+        <p class="occhiello compare col-2-12">Panoramica</p>
+        <h2 class="titolo-grande compare col-2-12">Protezione totale.<br><span class="grigio">Leggerezza assoluta.</span></h2>
+        <p class="testo-lead compare col-2-8">
+          Gli Occhiali Protettivi nascono per chi lavora con le mani e ha bisogno di vedere tutto, senza
+          rinunciare al comfort. Uno schermo avvolgente in policarbonato copre l’intero campo visivo, mentre
+          le protezioni laterali con feritoie di ventilazione schermano schegge e polvere e lasciano
+          circolare l’aria, per ridurre l’appannamento.
+        </p>
+        <dl class="scheda compare col-9-12">
+          <div><dt>Larghezza</dt><dd data-misura="larghezza">—</dd></div>
+          <div><dt>Altezza</dt><dd data-misura="altezza">—</dd></div>
+          <div><dt>Profondità</dt><dd data-misura="profondita">—</dd></div>
+          <div><dt>Schermo</dt><dd>Policarbonato</dd></div>
+        </dl>
+      </div>
+
+      <div class="griglia caratteristiche">
+        <article class="carta compare col-span-4">
+          <h3>Visione avvolgente</h3>
+          <p>Lo schermo unico, curvo, segue la forma del viso e non lascia punti ciechi.</p>
+        </article>
+        <article class="carta compare col-span-4">
+          <h3>Protezioni laterali</h3>
+          <p>Le alette sulle stanghe chiudono i lati. Le feritoie fanno passare l’aria.</p>
+        </article>
+        <article class="carta compare col-span-4">
+          <h3>Pieghevoli</h3>
+          <p>Le cerniere chiudono le stanghe a 90°: gli occhiali si ripongono in tasca o nella custodia.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. VISTE: griglia di 6 colonne, ogni immagine occupa 2 colonne → 3 per riga -->
+    <section id="viste" class="sezione-scura">
+      <div class="griglia">
+        <p class="occhiello compare col-2-12">Viste</p>
+        <h2 class="titolo-grande compare col-2-12">Ogni angolazione.<br><span class="grigio">Nessun compromesso.</span></h2>
+      </div>
+      <div class="griglia-6 viste-griglia">
+        <figure><img data-vista="frontale" alt="Vista frontale"><figcaption>Frontale</figcaption></figure>
+        <figure><img data-vista="posteriore" alt="Vista posteriore"><figcaption>Posteriore</figcaption></figure>
+        <figure><img data-vista="laterale-dx" alt="Vista laterale destra"><figcaption>Laterale destra</figcaption></figure>
+        <figure><img data-vista="laterale-sx" alt="Vista laterale sinistra"><figcaption>Laterale sinistra</figcaption></figure>
+        <figure><img data-vista="alto" alt="Vista dall'alto"><figcaption>Dall’alto</figcaption></figure>
+        <figure><img data-vista="basso" alt="Vista dal basso"><figcaption>Dal basso</figcaption></figure>
+        <figure><img data-vista="prospettica" alt="Vista prospettica"><figcaption>Prospettica</figcaption></figure>
+        <figure><img data-vista="tre-quarti" alt="Vista di tre quarti posteriore"><figcaption>Tre quarti posteriore</figcaption></figure>
+        <figure><img data-vista="chiusi" alt="Vista con le stanghe chiuse"><figcaption>Chiusi</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 4. CHIUSURA: scorrendo, le stanghe si chiudono (palco sticky) -->
+    <section id="chiusura" class="sezione-sticky sezione-chiara" style="--altezza: 420vh">
+      <div class="palco">
+        <canvas aria-label="Gli occhiali chiudono le stanghe mentre scorri"></canvas>
+        <div class="griglia palco-testi">
+          <div class="palco-testo col-2-12" data-da="0" data-a="0.45">
+            <p class="occhiello">Chiusura</p>
+            <h2 class="titolo-medio">Scorri.<br><span class="grigio">Le stanghe si chiudono.</span></h2>
+          </div>
+          <div class="palco-testo col-2-12" data-da="0.45" data-a="0.82">
+            <p class="occhiello">Cerniere</p>
+            <h2 class="titolo-medio">Una rotazione di 90°.<br><span class="grigio">Precisa e silenziosa.</span></h2>
+          </div>
+          <div class="palco-testo col-2-12" data-da="0.82">
+            <p class="occhiello">Compatti</p>
+            <h2 class="titolo-medio">Chiusi, stanno<br><span class="grigio">ovunque.</span></h2>
+          </div>
+        </div>
+        <div class="avanzamento" aria-hidden="true"><span class="avanzamento-barra"></span></div>
+      </div>
+    </section>
+
+    <!-- 5. ESPLOSO: scorrendo, le parti si separano e compaiono i nomi -->
+    <section id="esploso" class="sezione-sticky sezione-scura" style="--altezza: 520vh">
+      <div class="palco">
+        <canvas aria-label="Esploso degli occhiali con il nome delle parti"></canvas>
+        <div class="etichette" aria-live="polite"></div>
+        <div class="griglia palco-testi">
+          <div class="palco-testo col-2-12" data-da="0" data-a="0.3">
+            <p class="occhiello">Esploso</p>
+            <h2 class="titolo-medio">Dentro ogni dettaglio.</h2>
+          </div>
+          <div class="palco-testo col-2-12" data-da="0.88">
+            <p class="occhiello">Sette parti</p>
+            <h2 class="titolo-medio">Progettate<br><span class="grigio">per lavorare insieme.</span></h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INDOSSALI: la fotocamera -->
+    <section id="indossali" class="sezione-chiara">
+      <div class="griglia">
+        <p class="occhiello compare col-2-12">Indossali</p>
+        <h2 class="titolo-grande compare col-2-12">Provali addosso.<br><span class="grigio">Adesso.</span></h2>
+        <p class="testo-lead compare col-2-9">Attiva la fotocamera: gli occhiali si appoggiano su ogni viso inquadrato (fino a quattro) e seguono i movimenti della testa. Scatta una foto e condividila.</p>
+
+        <div class="indossa col-2-12 compare">
+          <div class="indossa-palco">
+            <video playsinline muted></video>
+            <canvas class="indossa-canvas"></canvas>
+            <div class="indossa-invito">
+              <svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M9.4 4h5.2l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.9l1.5-2Zm2.6 4.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm0 1.8a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4Z"/></svg>
+              <p>La fotocamera è spenta</p>
+            </div>
+            <p class="indossa-stato" hidden></p>
+            <div class="indossa-lampo"></div>
+          </div>
+          <div class="indossa-comandi">
+            <div class="indossa-azioni">
+              <button class="indossa-bottone bottone-blu" type="button">Attiva la fotocamera</button>
+              <button class="indossa-scatta bottone-secondario" type="button" disabled>Scatta foto</button>
+            </div>
+            <label class="indossa-misura">
+              <span>Grandezza <span class="indossa-percento">100%</span></span>
+              <input class="indossa-slider" type="range" min="80" max="125" step="1" value="100">
+            </label>
+          </div>
+          <div class="indossa-foto" hidden>
+            <img alt="La foto con gli Occhiali Protettivi">
+            <div class="indossa-foto-azioni">
+              <button class="indossa-condividi bottone-blu" type="button">Condividi</button>
+              <a class="indossa-scarica bottone-secondario" download="occhiali-protettivi.png">Scarica</a>
+              <button class="indossa-chiudi-foto bottone-link" type="button">Chiudi</button>
+            </div>
+          </div>
+          <p class="nota">Il video resta sul tuo dispositivo: non viene registrato né inviato.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="piede">
+    <div class="griglia">
+      <p class="col-2-8">Occhiali Protettivi — progetto di Giacomo Cerioni.</p>
+      <p class="col-8-12 piede-destra">Modello 3D: giacomocerioni.glb</p>
+    </div>
+  </footer>
+
+</body>
+</html>
